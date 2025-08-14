@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delícias Caseiras da Maria</title>
+    <meta
+      name="description"
+      content="Deliciosos bolos, doces e salgados caseiros feitos com amor. Encomendas personalizadas para todas as ocasiões."
+    />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind-config.js"></script>
+  </head>
+  <body class="gradient-bg">
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+      <div class="container mx-auto px-4 relative">
+        <div class="flex items-center h-16">
+          <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 gradient-button rounded-full"></div>
+            <span class="text-xl font-bold text-primary-900"
+              >Delícias Caseiras</span
+            >
+          </div>
+          <div class="flex-1 flex justify-end items-center">
+            <!-- Desktop Navigation (controlled via .nav-desktop) -->
+            <nav
+              class="nav-desktop space-x-8 justify-end"
+              role="navigation"
+              aria-label="Main Navigation"
+            >
+              <a
+                href="#home"
+                class="text-gray-700 hover:text-primary-600 transition-colors"
+                >Início</a
+              >
+              <a
+                href="#products"
+                class="text-gray-700 hover:text-primary-600 transition-colors"
+                >Meus Produtos</a
+              >
+              <a
+                href="#contact"
+                class="text-gray-700 hover:text-primary-600 transition-colors"
+                >Contato</a
+              >
+            </nav>
+            <!-- Mobile Menu Button (controlled via .mobile-menu-btn) -->
+            <button
+              id="mobile-menu-btn"
+              class="mobile-menu-btn p-2 ml-2"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+              aria-label="Abrir menu"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile Navigation -->
+        <nav
+          id="mobile-menu"
+          class="mobile-menu bg-white rounded-lg shadow-lg p-4 fixed top-16 z-[9999]"
+          aria-hidden="true"
+        >
+          <a
+            href="#home"
+            class="text-gray-700 hover:text-primary-600 transition-colors"
+            >Início</a
+          >
+          <a
+            href="#products"
+            class="text-gray-700 hover:text-primary-600 transition-colors"
+            >Meus Produtos</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-700 hover:text-primary-600 transition-colors"
+            >Contato</a
+          >
+        </nav>
+      </div>
+    </header>
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="py-20 lg:py-32">
+        <div
+          class="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-12"
+        >
+          <!-- Texto principal -->
+          <div class="space-y-6 flex-1 w-full">
+            <h1
+              class="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight"
+            >
+              Bem-vindos às <span class="gradient-text">Delícias Caseiras</span>
+            </h1>
+            <p class="text-lg text-gray-600 leading-relaxed"></p>
+            <p class="text-lg text-gray-600 leading-relaxed"></p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <button
+                onclick="scrollToSection('products')"
+                class="gradient-button text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all"
+              >
+                Ver Produtos
+              </button>
+              <button
+                onclick="scrollToSection('contact')"
+                class="border-2 border-primary-500 text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-all"
+              >
+                Fazer Pedido
+              </button>
+            </div>
+          </div>
+          <!-- Imagem e bolas decorativas -->
+          <div class="flex-1 w-full flex justify-center items-center">
+            <div
+              class="relative w-full max-w-xs sm:max-w-sm md:max-w-md h-64 sm:h-80 md:h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl mx-auto lg:mx-0 flex items-center justify-center"
+            >
+              <img
+                src="/placeholder.svg?height=500&width=400"
+                alt=""
+                class="w-full h-full object-cover"
+              />
+              <!-- Bolas decorativas (mesma aparência da tela grande em telas pequenas) -->
+              <div
+                class="absolute -bottom-6 -right-6 w-24 h-24 gradient-button rounded-full opacity-20"
+              ></div>
+              <div
+                class="absolute -top-6 -left-6 w-16 h-16 gradient-button rounded-full opacity-20"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Products Section -->
+      <section id="products" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Meus Produtos Deliciosos
+            </h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+              Cada item é feito sob encomenda usando ingredientes premium e
+              técnicas tradicionais. Sinta a diferença do verdadeiro sabor
+              caseiro!
+            </p>
+          </div>
+
+          <!-- Product Filter Tabs -->
+          <div class="flex justify-center mb-12">
+            <div class="bg-gray-100 p-1 rounded-lg inline-flex">
+              <button
+                onclick="showCategory('bolos')"
+                id="tab-bolos"
+                class="product-tab active-tab px-6 py-3 rounded-md font-semibold transition-all"
+              >
+                Bolos
+              </button>
+              <button
+                onclick="showCategory('doces')"
+                id="tab-doces"
+                class="product-tab px-6 py-3 rounded-md font-semibold transition-all"
+              >
+                Doces & Sobremesas
+              </button>
+              <button
+                onclick="showCategory('salgados')"
+                id="tab-salgados"
+                class="product-tab px-6 py-3 rounded-md font-semibold transition-all"
+              >
+                Salgados
+              </button>
+            </div>
+          </div>
+
+          <!-- Products Container -->
+          <div id="products-container">
+            <!-- Bolos -->
+            <div id="category-bolos" class="product-category">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                  class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img
+                    src="/placeholder.svg?height=300&width=300&text=Bolo+de+Chocolate"
+                    alt="Bolo de Chocolate"
+                    class="w-full h-64 object-cover"
+                  />
+                  <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2"></h4>
+                    <p class="text-gray-600"></p>
+                    <div class="mt-4 text-primary-600 font-semibold"></div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img
+                    src="/placeholder.svg?height=300&width=300&text=Cheesecake+Baunilha"
+                    alt="Cheesecake de Baunilha"
+                    class="w-full h-64 object-cover"
+                  />
+                  <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2"></h4>
+                    <p class="text-gray-600"></p>
+                    <div class="mt-4 text-primary-600 font-semibold"></div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img
+                    src="/placeholder.svg?height=300&width=300&text=Red+Velvet"
+                    alt="Bolo Red Velvet"
+                    class="w-full h-64 object-cover"
+                  />
+                  <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2"></h4>
+                    <p class="text-gray-600"></p>
+                    <div class="mt-4 text-primary-600 font-semibold"></div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img
+                    src="/placeholder.svg?height=300&width=300&text=Bolo+Cenoura"
+                    alt="Bolo de Cenoura"
+                    class="w-full h-64 object-cover"
+                  />
+                  <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2"></h4>
+                    <p class="text-gray-600"></p>
+                    <div class="mt-4 text-primary-600 font-semibold"></div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img
+                    src="/placeholder.svg?height=300&width=300&text=Bolo+Limao"
+                    alt="Bolo de Limão"
+                    class="w-full h-64 object-cover"
+                  />
+                  <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2"></h4>
+                    <p class="text-gray-600"></p>
+                    <div class="mt-4 text-primary-600 font-semibold"></div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img
+                    src="/placeholder.svg?height=300&width=300&text=Bolo+Morango"
+                    alt="Bolo de Morango"
+                    class="w-full h-64 object-cover"
+                  />
+                  <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2"></h4>
+                    <p class="text-gray-600"></p>
+                    <div class="mt-4 text-primary-600 font-semibold"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Doces -->
+            <div id="category-doces" class="product-category hidden">
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                  class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img
+                    src="/placeholder.svg?height=300&width=300&text=Cookies+Artesanais"
+                    alt="Cookies Artesanais"
+                    class="w-full h-64 object-cover"
+                  />
+                  <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2"></h4>
+                    <p class="text-gray-600"></p>
+                    <div class="mt-4 text-primary-600 font-semibold"></div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img
+                    src="/placeholder.svg?height=300&width=300&text=Brownies+Gourmet"
+                    alt="Brownies Gourmet"
+                    class="w-full h-64 object-cover"
+                  />
+                  <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2"></h4>
+                    <p class="text-gray-600"></p>
+                    <div class="mt-4 text-primary-600 font-semibold"></div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img
+                    src="/placeholder.svg?height=300&width=300&text=Tortinhas+Frutas"
+                    alt="Tortinhas de Frutas"
+                    class="w-full h-64 object-cover"
+                  />
+                  <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2"></h4>
+                    <p class="text-gray-600"></p>
+                    <div class="mt-4 text-primary-600 font-semibold"></div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img
+                    src="/placeholder.svg?height=300&width=300&text=Brigadeiros+Gourmet"
+                    alt="Brigadeiros Gourmet"
+                    class="w-full h-64 object-cover"
+                  />
+                  <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2"></h4>
+                    <p class="text-gray-600"></p>
+                    <div class="mt-4 text-primary-600 font-semibold"></div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img
+                    src="/placeholder.svg?height=300&width=300&text=Pudim+Caseiro"
+                    alt="Pudim Caseiro"
+                    class="w-full h-64 object-cover"
+                  />
+                  <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2"></h4>
+                    <p class="text-gray-600"></p>
+                    <div class="mt-4 text-primary-600 font-semibold"></div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img
+                    src="/placeholder.svg?height=300&width=300&text=Beijinhos+Gourmet"
+                    alt="Beijinhos Gourmet"
+                    class="w-full h-64 object-cover"
+                  />
+                  <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2"></h4>
+                    <p class="text-gray-600"></p>
+                    <div class="mt-4 text-primary-600 font-semibold"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Salgados -->
+            <div id="category-salgados" class="product-category hidden">
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                  class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img
+                    src="/placeholder.svg?height=300&width=300&text=Pao+Focaccia"
+                    alt="Pão Focaccia"
+                    class="w-full h-64 object-cover"
+                  />
+                  <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2"></h4>
+                    <p class="text-gray-600"></p>
+                    <div class="mt-4 text-primary-600 font-semibold"></div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img
+                    src="/placeholder.svg?height=300&width=300&text=Palitos+Queijo"
+                    alt="Palitos de Queijo"
+                    class="w-full h-64 object-cover"
+                  />
+                  <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2"></h4>
+                    <p class="text-gray-600"></p>
+                    <div class="mt-4 text-primary-600 font-semibold"></div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img
+                    src="/placeholder.svg?height=300&width=300&text=Empadas+Caseiras"
+                    alt="Empadas Caseiras"
+                    class="w-full h-64 object-cover"
+                  />
+                  <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2"></h4>
+                    <p class="text-gray-600"></p>
+                    <div class="mt-4 text-primary-600 font-semibold"></div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img
+                    src="/placeholder.svg?height=300&width=300&text=Coxinhas+Gourmet"
+                    alt="Coxinhas Gourmet"
+                    class="w-full h-64 object-cover"
+                  />
+                  <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2"></h4>
+                    <p class="text-gray-600"></p>
+                    <div class="mt-4 text-primary-600 font-semibold"></div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img
+                    src="/placeholder.svg?height=300&width=300&text=Esfirras+Abertas"
+                    alt="Esfirras Abertas"
+                    class="w-full h-64 object-cover"
+                  />
+                  <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2"></h4>
+                    <p class="text-gray-600"></p>
+                    <div class="mt-4 text-primary-600 font-semibold"></div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <img
+                    src="/placeholder.svg?height=300&width=300&text=Quiches+Individuais"
+                    alt="Quiches Individuais"
+                    class="w-full h-64 object-cover"
+                  />
+                  <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2"></h4>
+                    <p class="text-gray-600"></p>
+                    <div class="mt-4 text-primary-600 font-semibold"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 gradient-bg">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Vamos Criar Algo Delicioso Juntos
+            </h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+              Pronta para fazer seu pedido ou tem dúvidas? Adoraria conversar
+              com você! Preencha o formulário abaixo ou entre em contato direto
+              pelo WhatsApp.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Order Form -->
+            <div class="bg-white rounded-lg shadow-lg p-8">
+              <h3 class="text-2xl font-bold text-gray-900 mb-6">
+                Faça Seu Pedido
+              </h3>
+              <form id="order-form" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      for="name"
+                      class="block text-sm font-medium text-gray-700 mb-2"
+                      >Nome Completo *</label
+                    >
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      placeholder="Seu nome completo"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="email"
+                      class="block text-sm font-medium text-gray-700 mb-2"
+                      >Email *</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      placeholder="seu@email.com"
+                    />
+                  </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      for="phone"
+                      class="block text-sm font-medium text-gray-700 mb-2"
+                      >Telefone</label
+                    >
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      placeholder="(11) 99999-9999"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="date"
+                      class="block text-sm font-medium text-gray-700 mb-2"
+                      >Data Necessária</label
+                    >
+                    <input
+                      type="date"
+                      id="date"
+                      name="date"
+                      class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    />
+                  </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      for="product"
+                      class="block text-sm font-medium text-gray-700 mb-2"
+                      >Tipo de Produto *</label
+                    >
+                    <select
+                      id="product"
+                      name="product"
+                      required
+                      class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    >
+                      <option value="">Selecione um produto</option>
+                      <option value="bolo">Bolo Personalizado</option>
+                      <option value="cookies">Cookies</option>
+                      <option value="brownies">Brownies</option>
+                      <option value="cheesecake">Cheesecake</option>
+                      <option value="pao">Pão/Focaccia</option>
+                      <option value="salgados">Salgados</option>
+                      <option value="outros">Outros</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label
+                      for="quantity"
+                      class="block text-sm font-medium text-gray-700 mb-2"
+                      >Quantidade/Tamanho</label
+                    >
+                    <input
+                      type="text"
+                      id="quantity"
+                      name="quantity"
+                      class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      placeholder="ex: 12 cookies, bolo 8 pessoas"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    for="message"
+                    class="block text-sm font-medium text-gray-700 mb-2"
+                    >Detalhes Adicionais</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    placeholder="Sabores especiais, decorações, restrições alimentares, etc."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full gradient-button text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg transition-all"
+                >
+                  Enviar Pedido via WhatsApp
+                </button>
+              </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="space-y-8">
+              <!-- Card: Entre em Contato -->
+              <div class="bg-white rounded-lg shadow-lg p-8">
+                <h3 class="text-xl font-semibold text-gray-900 mb-6">
+                  Entre em Contato
+                </h3>
+                <div class="space-y-4">
+                  <div class="flex items-center space-x-3">
+                    <svg
+                      class="w-5 h-5 text-primary-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      />
+                    </svg>
+                    <span class="text-gray-600"></span>
+                  </div>
+                  <div class="flex items-center space-x-3">
+                    <svg
+                      class="w-5 h-5 text-primary-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span class="text-gray-600"></span>
+                  </div>
+                  <div class="flex items-center space-x-3">
+                    <svg
+                      class="w-5 h-5 text-primary-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                    <span class="text-gray-600"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card: WhatsApp Rápido -->
+              <div
+                class="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg shadow-lg p-8 text-center"
+              >
+                <svg
+                  class="w-12 h-12 mx-auto mb-4"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"
+                  />
+                </svg>
+                <h3 class="text-xl font-semibold mb-2">WhatsApp Rápido</h3>
+                <p class="mb-6 opacity-90">
+                  Precisa de algo urgente? Me mande uma mensagem no WhatsApp
+                  para resposta mais rápida!
+                </p>
+                <button
+                  onclick="openWhatsApp()"
+                  class="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all"
+                >
+                  Conversar no WhatsApp
+                </button>
+              </div>
+
+              <!-- Card: Informações do Pedido -->
+              <div class="bg-white rounded-lg shadow-lg p-8">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                  Informações do Pedido
+                </h3>
+                <ul class="space-y-2 text-gray-600">
+                  <li>
+                    • Preferível 48h de antecedência para pedidos personalizados
+                  </li>
+                  <li>
+                    • Pedidos no mesmo dia disponíveis para itens selecionados
+                  </li>
+                  <li>• Entrega gratuita para pedidos acima de R$ 100</li>
+                  <li>• Pagamento: Dinheiro, PIX, Cartão</li>
+                  <li>• Todos os itens feitos frescos sob encomenda</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary-900 text-white py-8">
+      <div class="container mx-auto px-4 text-center">
+        <p>&copy; 2024 Delícias Caseiras. Feito com amor em cada mordida.</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

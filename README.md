@@ -1,4 +1,4 @@
-# Delícia Cazeiras 🍰
+# Delícia Cazeiras 
 
 **Delícia Cazeiras** é um site profissional de produtos caseiros, criado para apresentar e vender **bolos, doces e salgados artesanais**. O projeto combina design moderno e responsivo com uma experiência de usuário intuitiva, oferecendo uma vitrine online para os produtos de forma organizada e atrativa.  
 
@@ -17,3 +17,6 @@
 - Layout responsivo, adaptável a dispositivos móveis e desktops  
 - Informações detalhadas de cada produto  
 - Seção de contato e pedidos
+
+
+## OBS: Em Desenvolvimento 

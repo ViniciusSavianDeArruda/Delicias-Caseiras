@@ -1,3 +1,6 @@
+/* Força o carregamento das classes Tailwind */
+@import url('https://cdn.tailwindcss.com');
+
 /* Estilos customizados movidos do <style> inline */
 .gradient-bg {
     background: linear-gradient(135deg, #fff7ed 0%, #fdf2f8 100%);
@@ -141,4 +144,39 @@
 /* Smooth scroll */
 html {
     scroll-behavior: smooth;
+}
+
+/* Garante que os elementos sejam visíveis mesmo antes do Tailwind carregar */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.grid {
+    display: grid;
+}
+
+.flex {
+    display: flex;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Classes básicas para garantir layout mesmo sem Tailwind */
+.text-center { text-align: center; }
+.text-white { color: white; }
+.bg-white { background-color: white; }
+.rounded-lg { border-radius: 0.5rem; }
+.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+.p-6 { padding: 1.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.space-y-2 > * + * { margin-top: 0.5rem; }
+
+@media (min-width: 768px) {
+    .md\\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }

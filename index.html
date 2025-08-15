@@ -8,9 +8,9 @@
       name="description"
       content="Deliciosos bolos, doces e salgados caseiros feitos com amor. Encomendas personalizadas para todas as ocasiões."
     />
-    <link rel="stylesheet" href="src/styles/main.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="src/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="src/styles/main.css" />
   </head>
   <body class="gradient-bg">
     <!-- Componente Header será carregado aqui -->
@@ -579,6 +579,18 @@
     <!-- Componente Footer será carregado aqui -->
     <div id="footer-container"></div>
 
-    <script type="module" src="src/js/main.js"></script>
+    <!-- Scripts carregados na ordem correta -->
+    <script>
+      // Aguarda o Tailwind carregar completamente antes de inicializar
+      document.addEventListener('DOMContentLoaded', function() {
+        // Pequeno delay para garantir que o Tailwind foi processado
+        setTimeout(function() {
+          const script = document.createElement('script');
+          script.type = 'module';
+          script.src = 'src/js/main.js';
+          document.body.appendChild(script);
+        }, 100);
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,79 @@
+<!-- Header -->
+<header class="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+  <div class="container mx-auto px-4 relative">
+    <div class="flex items-center h-16">
+      <div class="flex items-center space-x-2">
+        <div class="w-8 h-8 gradient-button rounded-full"></div>
+        <span class="text-xl font-bold text-primary-900">Delícias Caseiras</span>
+      </div>
+      <div class="flex-1 flex justify-end items-center">
+        <!-- Desktop Navigation (controlled via .nav-desktop) -->
+        <nav
+          class="nav-desktop space-x-8 justify-end"
+          role="navigation"
+          aria-label="Main Navigation"
+        >
+          <a
+            href="#home"
+            class="text-gray-700 hover:text-primary-600 transition-colors"
+            >Início</a
+          >
+          <a
+            href="#products"
+            class="text-gray-700 hover:text-primary-600 transition-colors"
+            >Meus Produtos</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-700 hover:text-primary-600 transition-colors"
+            >Contato</a
+          >
+        </nav>
+        <!-- Mobile Menu Button (controlled via .mobile-menu-btn) -->
+        <button
+          id="mobile-menu-btn"
+          class="mobile-menu-btn p-2 ml-2"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="Abrir menu"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Navigation -->
+    <nav
+      id="mobile-menu"
+      class="mobile-menu bg-white rounded-lg shadow-lg p-4 fixed top-16 z-[9999]"
+      aria-hidden="true"
+    >
+      <a
+        href="#home"
+        class="text-gray-700 hover:text-primary-600 transition-colors"
+        >Início</a
+      >
+      <a
+        href="#products"
+        class="text-gray-700 hover:text-primary-600 transition-colors"
+        >Meus Produtos</a
+      >
+      <a
+        href="#contact"
+        class="text-gray-700 hover:text-primary-600 transition-colors"
+        >Contato</a
+      >
+    </nav>
+  </div>
+</header>

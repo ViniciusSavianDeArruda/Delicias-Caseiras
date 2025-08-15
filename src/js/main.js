@@ -6,14 +6,22 @@ import { loadComponents } from './components.js';
 
 // Inicialização principal da aplicação
 document.addEventListener("DOMContentLoaded", function () {
-    // Carrega os componentes primeiro
-    loadComponents();
+    console.log('DOM carregado, iniciando aplicação...');
     
-    // Aguarda os componentes carregarem, depois inicializa as funcionalidades
-    setTimeout(() => {
+    // Carrega os componentes e inicializa as funcionalidades
+    loadComponents().then(() => {
+        console.log('Componentes carregados, inicializando funcionalidades...');
         initializeNavigation();
         initializeProducts();
         initializeContact();
         initializeAnimations();
-    }, 1000); // Timeout aumentado para garantir que os componentes carreguem
+        console.log('Aplicação totalmente inicializada!');
+    }).catch(error => {
+        console.error('Erro ao carregar componentes:', error);
+        // Mesmo com erro, tenta inicializar as funcionalidades
+        initializeNavigation();
+        initializeProducts();
+        initializeContact();
+        initializeAnimations();
+    });
 });

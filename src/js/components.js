@@ -2,8 +2,7 @@
 export function loadComponents() {
     console.log('Iniciando carregamento de componentes...');
     
-    // Carrega o componente header
-    fetch('src/components/header.html')
+    const loadHeader = fetch('src/components/header.html')
         .then(response => {
             console.log('Header response status:', response.status);
             if (!response.ok) {
@@ -42,8 +41,7 @@ export function loadComponents() {
             }
         });
 
-    // Carrega o componente hero
-    fetch('src/components/hero.html')
+    const loadHero = fetch('src/components/hero.html')
         .then(response => {
             console.log('Hero response status:', response.status);
             if (!response.ok) {
@@ -83,8 +81,7 @@ export function loadComponents() {
             }
         });
 
-    // Carrega o componente footer
-    fetch('src/components/footer.html')
+    const loadFooter = fetch('src/components/footer.html')
         .then(response => {
             console.log('Footer response status:', response.status);
             if (!response.ok) {
@@ -115,4 +112,7 @@ export function loadComponents() {
                 `;
             }
         });
+
+    // Retorna uma Promise que resolve quando todos os componentes são carregados
+    return Promise.all([loadHeader, loadHero, loadFooter]);
 }

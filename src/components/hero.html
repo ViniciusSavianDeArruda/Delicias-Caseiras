@@ -1,0 +1,67 @@
+<!-- Hero Section -->
+<section id="hero" class="pt-16 pb-20 gradient-bg min-h-screen flex items-center">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Hero Content -->
+      <div class="text-center lg:text-left">
+        <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          Delícias <span class="gradient-text">Caseiras</span> Feitas com Amor
+        </h1>
+        <p class="text-lg lg:text-xl text-gray-600 mb-8 max-w-2xl">
+          Bolos artesanais, doces irresistíveis e salgados saborosos. Cada receita é preparada com ingredientes selecionados e muito carinho, trazendo o verdadeiro sabor caseiro para sua mesa.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <button onclick="scrollToSection('products')" class="gradient-button text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-xl transition-all transform hover:-translate-y-1">
+            Ver Produtos
+          </button>
+          <button onclick="openWhatsApp()" class="bg-white text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold border-2 border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all">
+            Fazer Pedido
+          </button>
+        </div>
+      </div>
+
+      <!-- Hero Image -->
+      <div class="relative">
+        <div class="relative z-10">
+          <img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Deliciosos bolos caseiros" class="rounded-2xl shadow-2xl w-full h-96 object-cover"/>
+        </div>
+        <!-- Decorative elements -->
+        <div class="absolute -top-4 -right-4 w-72 h-72 bg-primary-100 rounded-full opacity-20 -z-10"></div>
+        <div class="absolute -bottom-4 -left-4 w-48 h-48 bg-pink-100 rounded-full opacity-30 -z-10"></div>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
+      <div class="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all">
+        <div class="w-12 h-12 gradient-button rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Feito com Amor</h3>
+        <p class="text-gray-600">Cada produto é preparado artesanalmente com ingredientes frescos e muito carinho.</p>
+      </div>
+
+      <div class="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all">
+        <div class="w-12 h-12 gradient-button rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Sempre Fresquinho</h3>
+        <p class="text-gray-600">Produtos feitos sob encomenda para garantir máxima qualidade e frescor.</p>
+      </div>
+
+      <div class="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all">
+        <div class="w-12 h-12 gradient-button rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Qualidade Garantida</h3>
+        <p class="text-gray-600">Ingredientes selecionados e receitas testadas para sua total satisfação.</p>
+      </div>
+    </div>
+  </div>
+</section>

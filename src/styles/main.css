@@ -165,7 +165,6 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    z-index: 1;
 }
 
 .product-card::before {
@@ -186,7 +185,6 @@
 .product-card:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    z-index: 2;
 }
 
 /* Efeito parallax suave */
@@ -232,35 +230,24 @@ html {
     color: #f97316;
 }
 
-/* Correção do z-index para evitar sobreposição */
-main {
-    position: relative;
-    z-index: 1;
-}
-
-footer {
-    position: relative;
-    z-index: 0;
-}
-
-/* Garantir que as seções tenham espaçamento adequado */
-section {
-    position: relative;
-    z-index: 1;
-}
-
 /* Classe auxiliar */
-.hidden { display: none !important; }
+.hidden { 
+    display: none !important; 
+}
 
 /* Navegação responsiva do header sem usar o `hidden` do Tailwind */
 /* Padrão: esconde nav desktop, mostra botão mobile */
-.nav-desktop { display: none; }
-.mobile-menu-btn { 
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-  padding: 0.5rem;
+.nav-desktop { 
+    display: none; 
 }
+
+.mobile-menu-btn { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    padding: 0.5rem;
+}
+
 .mobile-menu {
     display: none;
     flex-direction: column;
@@ -273,16 +260,23 @@ section {
 /* Em telas médias e maiores: mostra nav desktop, esconde botão/menu mobile */
 @media (min-width: 768px) {
     .nav-desktop { 
-      display: flex !important; 
-      align-items: center;
-      gap: 2rem;
+        display: flex !important; 
+        align-items: center;
+        gap: 2rem;
     }
-    .mobile-menu-btn { display: none !important; }
-    .mobile-menu { display: none !important; }
+    .mobile-menu-btn { 
+        display: none !important; 
+    }
+    .mobile-menu { 
+        display: none !important; 
+    }
 }
 
 /* Quando menu mobile é aberto via JS: mantém layout em coluna */
-.mobile-menu.open { display: flex; flex-direction: column; }
+.mobile-menu.open { 
+    display: flex; 
+    flex-direction: column; 
+}
 
 /* Links do menu mobile: empilhados verticalmente com largura total */
 .mobile-menu a {
@@ -290,38 +284,47 @@ section {
     width: 100%;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
-    color: #374151; /* equivale ao text-gray-700 do Tailwind */
+    color: #374151;
     text-decoration: none;
     text-align: center;
 }
+
 .mobile-menu a:hover {
-    background-color: rgba(15, 23, 42, 0.04); /* hover sutil */
+    background-color: rgba(15, 23, 42, 0.04);
 }
+
 .mobile-menu a + a {
     margin-top: 0.5rem;
 }
 
 /* Garante que links da nav desktop permaneçam inline em telas maiores */
 @media (min-width: 768px) {
-    .nav-desktop a { display: inline-block; }
+    .nav-desktop a { 
+        display: inline-block; 
+    }
 }
 
 /* Em telas pequenas: menu mobile ocupa largura com margem */
 @media (max-width: 767px) {
-    /* Menu mobile: largura total abaixo do header para melhor UX */
     .mobile-menu {
         position: fixed;
-        top: 4rem; /* altura do header (h-16) */
-        left: 1rem;      /* mantém margem da página */
-        right: 1rem;     /* mantém margem da página */
+        top: 4rem;
+        left: 1rem;
+        right: 1rem;
         width: auto;
         max-width: calc(100% - 2rem);
-        border-radius: 0.75rem; /* cantos arredondados uniformes */
+        border-radius: 0.75rem;
         margin: 0;
         box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
     }
-    .mobile-menu-btn { display: flex !important; }
+    
+    .mobile-menu-btn { 
+        display: flex !important; 
+    }
 
-    /* Alinha links à esquerda e adiciona padding interno */
-    .mobile-menu a { text-align: left; padding-left: 1rem; padding-right: 1rem; }
+    .mobile-menu a { 
+        text-align: left; 
+        padding-left: 1rem; 
+        padding-right: 1rem; 
+    }
 }

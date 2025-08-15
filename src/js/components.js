@@ -1,21 +1,27 @@
 // Funcionalidade de carregamento de componentes
 export function loadComponents() {
+    console.log('Iniciando carregamento de componentes...');
+    
     // Carrega o componente header
     fetch('src/components/header.html')
         .then(response => {
+            console.log('Header response status:', response.status);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             return response.text();
         })
         .then(html => {
+            console.log('Header HTML carregado com sucesso');
             const headerContainer = document.getElementById('header-container');
             if (headerContainer) {
                 headerContainer.innerHTML = html;
+                console.log('Header inserido no DOM');
             }
         })
         .catch(error => {
             console.error('Error loading header:', error);
+            console.log('Usando fallback para header');
             // Fallback: cria header básico
             const headerContainer = document.getElementById('header-container');
             if (headerContainer) {
@@ -39,19 +45,23 @@ export function loadComponents() {
     // Carrega o componente hero
     fetch('src/components/hero.html')
         .then(response => {
+            console.log('Hero response status:', response.status);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             return response.text();
         })
         .then(html => {
+            console.log('Hero HTML carregado com sucesso');
             const heroContainer = document.getElementById('hero-container');
             if (heroContainer) {
                 heroContainer.innerHTML = html;
+                console.log('Hero inserido no DOM');
             }
         })
         .catch(error => {
             console.error('Error loading hero:', error);
+            console.log('Usando fallback para hero');
             // Fallback: cria hero básico
             const heroContainer = document.getElementById('hero-container');
             if (heroContainer) {
@@ -76,19 +86,23 @@ export function loadComponents() {
     // Carrega o componente footer
     fetch('src/components/footer.html')
         .then(response => {
+            console.log('Footer response status:', response.status);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             return response.text();
         })
         .then(html => {
+            console.log('Footer HTML carregado com sucesso');
             const footerContainer = document.getElementById('footer-container');
             if (footerContainer) {
                 footerContainer.innerHTML = html;
+                console.log('Footer inserido no DOM');
             }
         })
         .catch(error => {
             console.error('Error loading footer:', error);
+            console.log('Usando fallback para footer');
             // Fallback: cria footer básico
             const footerContainer = document.getElementById('footer-container');
             if (footerContainer) {

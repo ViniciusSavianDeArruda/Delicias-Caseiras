@@ -15,5 +15,5 @@ document.addEventListener("DOMContentLoaded", function () {
         initializeProducts();
         initializeContact();
         initializeAnimations();
-    }, 500); // Timeout aumentado para garantir que os componentes carreguem
+    }, 1000); // Timeout aumentado para garantir que os componentes carreguem
 });

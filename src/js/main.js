@@ -54,18 +54,3 @@ if (document.readyState === 'loading') {
         });
     }, 200);
 }
-
-        initializeNavigation();
-        initializeProducts();
-        initializeContact();
-        initializeAnimations();
-        console.log('Aplicação totalmente inicializada!');
-    }).catch(error => {
-        console.error('Erro ao carregar componentes:', error);
-        // Mesmo com erro, tenta inicializar as funcionalidades
-        initializeNavigation();
-        initializeProducts();
-        initializeContact();
-        initializeAnimations();
-    });
-});

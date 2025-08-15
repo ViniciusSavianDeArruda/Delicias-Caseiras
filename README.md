@@ -195,5 +195,3 @@ Projeto desenvolvido com foco em:
 - **Escalabilidade** da arquitetura
 
 ---
-
-**Feito com ❤️ para transformar momentos especiais em memórias deliciosas!** 🍰✨

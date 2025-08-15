@@ -1,18 +1,19 @@
 // Sistema de carregamento de componentes
 export function loadComponents() {
-    console.log('Carregando componentes...');
+    console.log('🔄 Carregando componentes...');
     
-    // Sempre usa fallbacks para garantir funcionamento
+    // Carrega todos os componentes usando fallbacks
     loadHeaderFallback();
     loadHeroFallback();
     loadFooterFallback();
     
-    console.log('Componentes carregados com sucesso!');
+    console.log('✅ Todos os componentes carregados!');
     return Promise.resolve();
 }
 
 // Fallback do Header
 function loadHeaderFallback() {
+    console.log('📋 Carregando Header...');
     const headerContainer = document.getElementById('header-container');
     if (headerContainer) {
         headerContainer.innerHTML = `
@@ -58,14 +59,16 @@ function loadHeaderFallback() {
       </button>
     </div>
   </div>
-</header>
-        `;
-        console.log('Header carregado');
+</header>`;
+        console.log('✅ Header carregado com sucesso!');
+    } else {
+        console.error('❌ Container do header não encontrado!');
     }
 }
 
 // Fallback do Hero
 function loadHeroFallback() {
+    console.log('🎨 Carregando Hero...');
     const heroContainer = document.getElementById('hero-container');
     if (heroContainer) {
         heroContainer.innerHTML = `
@@ -102,8 +105,9 @@ function loadHeroFallback() {
       </div>
     </div>
 
-    <!-- Características -->
+    <!-- OS 3 CARDS IMPORTANTES -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
+      <!-- Card 1: Feito com Amor -->
       <div class="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all">
         <div class="w-12 h-12 gradient-button rounded-full flex items-center justify-center mx-auto mb-4">
           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,6 +118,7 @@ function loadHeroFallback() {
         <p class="text-gray-600">Cada produto é preparado artesanalmente com ingredientes frescos e muito carinho.</p>
       </div>
 
+      <!-- Card 2: Sempre Fresquinho -->
       <div class="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all">
         <div class="w-12 h-12 gradient-button rounded-full flex items-center justify-center mx-auto mb-4">
           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -124,6 +129,7 @@ function loadHeroFallback() {
         <p class="text-gray-600">Produtos feitos sob encomenda para garantir máxima qualidade e frescor.</p>
       </div>
 
+      <!-- Card 3: Qualidade Garantida -->
       <div class="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all">
         <div class="w-12 h-12 gradient-button rounded-full flex items-center justify-center mx-auto mb-4">
           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,14 +141,16 @@ function loadHeroFallback() {
       </div>
     </div>
   </div>
-</section>
-        `;
-        console.log('Hero carregado');
+</section>`;
+        console.log('✅ Hero carregado com sucesso (incluindo os 3 cards)!');
+    } else {
+        console.error('❌ Container do hero não encontrado!');
     }
 }
 
 // Fallback do Footer
 function loadFooterFallback() {
+    console.log('📄 Carregando Footer...');
     const footerContainer = document.getElementById('footer-container');
     if (footerContainer) {
         footerContainer.innerHTML = `
@@ -212,8 +220,9 @@ function loadFooterFallback() {
       </p>
     </div>
   </div>
-</footer>
-        `;
-        console.log('Footer carregado');
+</footer>`;
+        console.log('✅ Footer carregado com sucesso!');
+    } else {
+        console.error('❌ Container do footer não encontrado!');
     }
 }

@@ -1,4 +1,4 @@
-/* Custom styles moved from inline <style> */
+/* Estilos customizados movidos do <style> inline */
 .gradient-bg {
     background: linear-gradient(135deg, #fff7ed 0%, #fdf2f8 100%);
 }
@@ -36,11 +36,11 @@
     display: none;
 }
 
-/* Small helper */
+/* Classe auxiliar */
 .hidden { display: none !important; }
 
-/* Responsive header navigation without using Tailwind's `hidden` */
-/* Default: hide desktop nav, show mobile button */
+/* Navegação responsiva do header sem usar o `hidden` do Tailwind */
+/* Padrão: esconde nav desktop, mostra botão mobile */
 .nav-desktop { display: none; }
 .mobile-menu-btn { 
   display: flex; 
@@ -57,7 +57,7 @@
     box-sizing: border-box;
 }
 
-/* On medium and larger screens show desktop nav, hide mobile button/menu */
+/* Em telas médias e maiores: mostra nav desktop, esconde botão/menu mobile */
 @media (min-width: 768px) {
     .nav-desktop { 
       display: flex !important; 
@@ -68,47 +68,47 @@
     .mobile-menu { display: none !important; }
 }
 
-/* When mobile menu is explicitly opened via JS we set inline style to flex; keep column layout */
+/* Quando menu mobile é aberto via JS: mantém layout em coluna */
 .mobile-menu.open { display: flex; flex-direction: column; }
 
-/* Mobile menu links: stack vertically and use full width */
+/* Links do menu mobile: empilhados verticalmente com largura total */
 .mobile-menu a {
     display: block;
     width: 100%;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
-    color: #374151; /* text-gray-700 */
+    color: #374151; /* equivale ao text-gray-700 do Tailwind */
     text-decoration: none;
     text-align: center;
 }
 .mobile-menu a:hover {
-    background-color: rgba(15, 23, 42, 0.04); /* subtle hover */
+    background-color: rgba(15, 23, 42, 0.04); /* hover sutil */
 }
 .mobile-menu a + a {
     margin-top: 0.5rem;
 }
 
-/* Ensure nav-desktop links remain inline on larger screens */
+/* Garante que links da nav desktop permaneçam inline em telas maiores */
 @media (min-width: 768px) {
     .nav-desktop a { display: inline-block; }
 }
 
-/* On small screens make the mobile menu span width with margin */
+/* Em telas pequenas: menu mobile ocupa largura com margem */
 @media (max-width: 767px) {
-    /* Mobile menu: full width below header for better UX */
+    /* Menu mobile: largura total abaixo do header para melhor UX */
     .mobile-menu {
         position: fixed;
-        top: 4rem; /* header height (h-16) */
-        left: 1rem;      /* keep same page gutter */
-        right: 1rem;     /* keep same page gutter */
+        top: 4rem; /* altura do header (h-16) */
+        left: 1rem;      /* mantém margem da página */
+        right: 1rem;     /* mantém margem da página */
         width: auto;
         max-width: calc(100% - 2rem);
-        border-radius: 0.75rem; /* uniform rounded corners */
+        border-radius: 0.75rem; /* cantos arredondados uniformes */
         margin: 0;
         box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
     }
     .mobile-menu-btn { display: flex !important; }
 
-    /* Align links to left and add inner padding */
+    /* Alinha links à esquerda e adiciona padding interno */
     .mobile-menu a { text-align: left; padding-left: 1rem; padding-right: 1rem; }
 }

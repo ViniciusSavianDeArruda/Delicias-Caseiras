@@ -1,6 +1,6 @@
-// Component loader functionality
+// Funcionalidade de carregamento de componentes
 export function loadComponents() {
-    // Load header component
+    // Carrega o componente header
     fetch('src/components/header.html')
         .then(response => {
             if (!response.ok) {
@@ -16,7 +16,7 @@ export function loadComponents() {
         })
         .catch(error => {
             console.error('Error loading header:', error);
-            // Fallback: create basic header
+            // Fallback: cria header básico
             const headerContainer = document.getElementById('header-container');
             if (headerContainer) {
                 headerContainer.innerHTML = `
@@ -36,7 +36,7 @@ export function loadComponents() {
             }
         });
 
-    // Load hero component
+    // Carrega o componente hero
     fetch('src/components/hero.html')
         .then(response => {
             if (!response.ok) {
@@ -52,7 +52,7 @@ export function loadComponents() {
         })
         .catch(error => {
             console.error('Error loading hero:', error);
-            // Fallback: create basic hero
+            // Fallback: cria hero básico
             const heroContainer = document.getElementById('hero-container');
             if (heroContainer) {
                 heroContainer.innerHTML = `
@@ -73,7 +73,7 @@ export function loadComponents() {
             }
         });
 
-    // Load footer component
+    // Carrega o componente footer
     fetch('src/components/footer.html')
         .then(response => {
             if (!response.ok) {
@@ -89,7 +89,7 @@ export function loadComponents() {
         })
         .catch(error => {
             console.error('Error loading footer:', error);
-            // Fallback: create basic footer
+            // Fallback: cria footer básico
             const footerContainer = document.getElementById('footer-container');
             if (footerContainer) {
                 footerContainer.innerHTML = `

@@ -1,6 +1,6 @@
-// Product functionality
+// Funcionalidades dos produtos
 export function initializeProducts() {
-    // Tabs de categoria de produtos
+    // Sistema de abas para categorias de produtos
     function showCategory(category) {
         const categories = document.querySelectorAll('.product-category');
         categories.forEach(cat => cat.classList.add('hidden'));
@@ -12,9 +12,9 @@ export function initializeProducts() {
         if (activeTab) activeTab.classList.add('active-tab');
     }
     
-    // Inicializa com bolos
+    // Inicializa mostrando a categoria de bolos
     showCategory('bolos');
 
-    // Expor função global
+    // Expõe função global para uso nos botões
     window.showCategory = showCategory;
 }

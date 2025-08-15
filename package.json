@@ -1,13 +1,13 @@
 {
   "name": "delicia-cazeiras",
   "version": "1.0.0",
-  "description": "Delícia Cazeiras é um site profissional de produtos caseiros, criado para apresentar e vender bolos, doces e salgados artesanais.",
+  "description": "Delícia Caseiras é um site profissional de produtos caseiros, criado para apresentar e vender bolos, doces e salgados artesanais.",
   "main": "index.html",
   "scripts": {
     "dev": "live-server --port=3000 --open=/",
     "start": "live-server --port=3000 --open=/"
   },
-  "keywords": ["website", "produtos-caseiros", "bolos", "doces", "salgados"],
+  "keywords": ["website", "produtos-caseiros", "bolos", "doces", "salgados", "artesanal", "caseiro"],
   "author": "",
   "license": "ISC",
   "devDependencies": {

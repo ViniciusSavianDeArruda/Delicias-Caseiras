@@ -1,13 +1,13 @@
-// Navigation functionality
+// Funcionalidades de navegação
 export function initializeNavigation() {
-    // Mobile menu toggle (use class .open so CSS controls presentation)
+    // Toggle do menu mobile (usa classe .open para controle via CSS)
     const mobileMenuBtn = document.getElementById("mobile-menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
     
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener("click", () => {
             const opened = mobileMenu.classList.toggle('open');
-            // update ARIA attributes
+            // Atualiza atributos ARIA para acessibilidade
             mobileMenu.setAttribute('aria-hidden', (!opened).toString());
             mobileMenuBtn.setAttribute('aria-expanded', opened.toString());
         });
@@ -33,12 +33,13 @@ export function initializeNavigation() {
         });
     });
 
-    // Expor função global para botões inline
+    // Expõe função global para botões inline
     window.scrollToSection = function(sectionId) {
         const element = document.getElementById(sectionId);
         if (element) {
             element.scrollIntoView({ behavior: "smooth" });
         }
+        // Fecha menu mobile se estiver aberto
         if (mobileMenu && mobileMenu.classList && mobileMenu.classList.contains('open')) {
             mobileMenu.classList.remove('open');
             mobileMenu.setAttribute('aria-hidden', 'true');

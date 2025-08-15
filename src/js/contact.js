@@ -1,6 +1,6 @@
 import { CONFIG } from './config.js';
 
-// Contact functionality
+// Funcionalidades de contato
 export function initializeContact() {
     // Formulário de pedido via WhatsApp
     const orderForm = document.getElementById("order-form");
@@ -9,7 +9,7 @@ export function initializeContact() {
             e.preventDefault();
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
-            // Validação de data
+            // Validação da data selecionada
             if (data.date) {
                 const selected = new Date(data.date);
                 const today = new Date(); today.setHours(0,0,0,0);
@@ -24,7 +24,7 @@ export function initializeContact() {
         });
     }
 
-    // Função WhatsApp global
+    // Função global para abrir WhatsApp
     window.openWhatsApp = function() {
         const message = "Olá Maria! Tenho interesse nos seus produtos caseiros. Poderia me contar mais sobre suas ofertas atuais?";
         const whatsappUrl = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;

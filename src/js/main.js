@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load components first
     loadComponents();
     
-    // Wait a bit for components to load, then initialize functionality
+    // Wait for components to load, then initialize functionality
     setTimeout(() => {
         initializeNavigation();
         initializeProducts();
         initializeContact();
         initializeAnimations();
-    }, 100);
+    }, 500); // Increased timeout to ensure components load
 });

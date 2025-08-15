@@ -8,12 +8,23 @@ import { loadComponents } from './components.js';
 document.addEventListener("DOMContentLoaded", function () {
     console.log('DOM carregado, iniciando aplicação...');
     
-    // Inicializa as funcionalidades diretamente (componentes já estão no HTML)
-    initializeNavigation();
-    initializeProducts();
-    initializeContact();
-    initializeAnimations();
-    console.log('Aplicação totalmente inicializada!');
+    // Carrega os componentes primeiro, depois inicializa as funcionalidades
+    loadComponents().then(() => {
+        console.log('Componentes carregados, inicializando funcionalidades...');
+        initializeNavigation();
+        initializeProducts();
+        initializeContact();
+        initializeAnimations();
+        console.log('Aplicação totalmente inicializada!');
+    }).catch(error => {
+        console.error('Erro ao carregar componentes:', error);
+        // Mesmo com erro, inicializa as funcionalidades (fallbacks já foram aplicados)
+        initializeNavigation();
+        initializeProducts();
+        initializeContact();
+        initializeAnimations();
+        console.log('Aplicação inicializada com fallbacks!');
+    });
 });
 
 // Fallback caso o DOMContentLoaded já tenha disparado
@@ -22,8 +33,16 @@ if (document.readyState === 'loading') {
 } else {
     // DOM já carregado, executa imediatamente
     console.log('DOM já estava carregado, iniciando aplicação...');
-    initializeNavigation();
-    initializeProducts();
-    initializeContact();
-    initializeAnimations();
+    loadComponents().then(() => {
+        initializeNavigation();
+        initializeProducts();
+        initializeContact();
+        initializeAnimations();
+    }).catch(error => {
+        console.error('Erro ao carregar componentes:', error);
+        initializeNavigation();
+        initializeProducts();
+        initializeContact();
+        initializeAnimations();
+    });
 }

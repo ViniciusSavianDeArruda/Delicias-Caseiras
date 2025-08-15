@@ -172,6 +172,69 @@ export const CONFIG = {
 ### Personalização de Cores
 As cores podem ser ajustadas no arquivo `src/js/tailwind-config.js` e `src/styles/main.css`.
 
+## 📝 Padrão de Commits
+
+Este projeto utiliza commits em **português** seguindo um padrão consistente para facilitar o entendimento e manutenção do código.
+
+### 🏷️ Tipos de Commit
+
+- **✨ feat**: Nova funcionalidade
+- **🐛 fix**: Correção de bug
+- **💄 style**: Mudanças de estilo/CSS
+- **♻️ refactor**: Refatoração de código
+- **📝 docs**: Atualização de documentação
+- **🔧 config**: Mudanças de configuração
+- **🚀 deploy**: Deploy e configurações de produção
+- **🧪 test**: Adição ou correção de testes
+- **⚡ perf**: Melhorias de performance
+
+### 📋 Exemplos de Commits
+
+```bash
+# Novas funcionalidades
+git commit -m "✨ feat: adiciona sistema de filtros de produtos"
+git commit -m "✨ feat: implementa integração com WhatsApp"
+
+# Correções
+git commit -m "🐛 fix: corrige alinhamento da navbar mobile"
+git commit -m "🐛 fix: resolve problema de carregamento de componentes"
+
+# Estilos e design
+git commit -m "💄 style: melhora responsividade do hero section"
+git commit -m "💄 style: atualiza cores do gradiente principal"
+
+# Refatoração
+git commit -m "♻️ refactor: organiza código JavaScript em módulos"
+git commit -m "♻️ refactor: separa componentes HTML do index principal"
+
+# Documentação
+git commit -m "📝 docs: atualiza README com estrutura do projeto"
+git commit -m "📝 docs: adiciona comentários nos arquivos JavaScript"
+
+# Configuração
+git commit -m "🔧 config: configura live-server para desenvolvimento"
+git commit -m "🔧 config: adiciona configuração do Tailwind CSS"
+```
+
+### 🎯 Boas Práticas
+
+1. **Commits pequenos e focados** - Uma mudança por commit
+2. **Mensagens descritivas** - Explique o que foi feito, não como
+3. **Presente do indicativo** - "adiciona" em vez de "adicionado"
+4. **Máximo 50 caracteres** no título do commit
+5. **Corpo do commit** para explicações mais detalhadas quando necessário
+
+### 📊 Exemplo de Histórico
+
+```bash
+✨ feat: implementa sistema de abas para categorias de produtos
+💄 style: melhora animações de hover nos cards
+🐛 fix: corrige menu mobile que não fechava automaticamente
+♻️ refactor: separa lógica de navegação em módulo próprio
+📝 docs: atualiza documentação dos componentes
+🔧 config: adiciona script de desenvolvimento no package.json
+```
+
 ## 🎯 Próximas Melhorias
 
 - [ ] Sistema de carrinho de compras

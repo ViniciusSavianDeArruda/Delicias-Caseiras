@@ -42,7 +42,12 @@
 /* Responsive header navigation without using Tailwind's `hidden` */
 /* Default: hide desktop nav, show mobile button */
 .nav-desktop { display: none; }
-.mobile-menu-btn { display: flex; align-items: center; }
+.mobile-menu-btn { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  padding: 0.5rem;
+}
 .mobile-menu {
     display: none;
     flex-direction: column;
@@ -54,7 +59,11 @@
 
 /* On medium and larger screens show desktop nav, hide mobile button/menu */
 @media (min-width: 768px) {
-    .nav-desktop { display: flex !important; }
+    .nav-desktop { 
+      display: flex !important; 
+      align-items: center;
+      gap: 2rem;
+    }
     .mobile-menu-btn { display: none !important; }
     .mobile-menu { display: none !important; }
 }

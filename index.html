@@ -1,597 +1,501 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delícias Caseiras da Maria</title>
-    <meta
-      name="description"
-      content="Deliciosos bolos, doces e salgados caseiros feitos com amor. Encomendas personalizadas para todas as ocasiões."
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="src/js/tailwind-config.js"></script>
-    <link rel="stylesheet" href="src/styles/main.css" />
-  </head>
-  <body class="gradient-bg">
-    <!-- Cabeçalho -->
-    <header class="bg-white shadow-sm fixed w-full top-0 z-50">
-      <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center h-16 w-full">
-          <!-- Logotipo -->
-          <div class="flex items-center space-x-2">
-            <div class="w-8 h-8 gradient-button rounded-full flex items-center justify-center">
-              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zM3 9a2 2 0 012-2h14a2 2 0 012 2v1H3V9z"/>
-              </svg>
+    <meta name="description" content="Deliciosos bolos, doces e salgados caseiros feitos com amor. Encomendas personalizadas para todas as ocasiões.">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zM3 9a2 2 0 012-2h14a2 2 0 012 2v1H3V9z"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Delícias da Maria</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="#hero" class="nav-link">Início</a>
+                    <a href="#products" class="nav-link">Produtos</a>
+                    <a href="#contact" class="nav-link">Contato</a>
+                    <button class="btn btn-primary" onclick="openWhatsApp()">WhatsApp</button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
             </div>
-            <span class="text-xl font-bold gradient-text">Delícias da Maria</span>
-          </div>
 
-          <!-- Navegação Desktop -->
-          <nav class="nav-desktop">
-            <a href="#hero" class="text-gray-700 hover:text-primary-600 transition-colors">Início</a>
-            <a href="#products" class="text-gray-700 hover:text-primary-600 transition-colors">Produtos</a>
-            <a href="#contact" class="text-gray-700 hover:text-primary-600 transition-colors">Contato</a>
-            <button onclick="openWhatsApp()" class="gradient-button text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all">
-              WhatsApp
-            </button>
-          </nav>
-
-          <!-- Botão Menu Mobile -->
-          <button id="mobile-menu-btn" class="mobile-menu-btn rounded-lg hover:bg-gray-100 transition-colors" aria-expanded="false" aria-controls="mobile-menu">
-            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-          </button>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+                <a href="#hero" class="mobile-menu-link">Início</a>
+                <a href="#products" class="mobile-menu-link">Produtos</a>
+                <a href="#contact" class="mobile-menu-link">Contato</a>
+                <button class="btn btn-primary btn-full" onclick="openWhatsApp()">WhatsApp</button>
+            </div>
         </div>
-
-        <!-- Menu Mobile -->
-        <div id="mobile-menu" class="mobile-menu bg-white border border-gray-200" aria-hidden="true">
-          <a href="#hero">Início</a>
-          <a href="#products">Produtos</a>
-          <a href="#contact">Contato</a>
-          <button onclick="openWhatsApp()" class="gradient-button text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all w-full">
-            WhatsApp
-          </button>
-        </div>
-      </div>
     </header>
 
     <main>
-      <!-- Seção Principal -->
-      <section id="hero" class="pt-16 pb-20 gradient-bg min-h-screen flex items-center">
-        <div class="container mx-auto px-4">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <!-- Conteúdo Principal -->
-            <div class="text-center lg:text-left">
-              <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Delícias <span class="gradient-text">Caseiras</span> Feitas com Amor
-              </h1>
-              <p class="text-lg lg:text-xl text-gray-600 mb-8 max-w-2xl">
-                Bolos artesanais, doces irresistíveis e salgados saborosos. Cada receita é preparada com ingredientes selecionados e muito carinho, trazendo o verdadeiro sabor caseiro para sua mesa.
-              </p>
-              <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button onclick="scrollToSection('products')" class="gradient-button text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-xl transition-all transform hover:-translate-y-1">
-                  Ver Produtos
-                </button>
-                <button onclick="openWhatsApp()" class="bg-white text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold border-2 border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all">
-                  Fazer Pedido
-                </button>
-              </div>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <!-- Main Content -->
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            Delícias <span class="gradient-text">Caseiras</span> Feitas com Amor
+                        </h1>
+                        <p class="hero-description">
+                            Bolos artesanais, doces irresistíveis e salgados saborosos. Cada receita é preparada com ingredientes selecionados e muito carinho, trazendo o verdadeiro sabor caseiro para sua mesa.
+                        </p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary btn-large" onclick="scrollToSection('products')">
+                                Ver Produtos
+                            </button>
+                            <button class="btn btn-secondary btn-large" onclick="openWhatsApp()">
+                                Fazer Pedido
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Hero Image -->
+                    <div class="hero-image">
+                        <div class="hero-image-container">
+                            <img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Deliciosos bolos caseiros" class="hero-img">
+                        </div>
+                        <div class="hero-decoration hero-decoration-1"></div>
+                        <div class="hero-decoration hero-decoration-2"></div>
+                    </div>
+                </div>
+
+                <!-- Features -->
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Feito com Amor</h3>
+                        <p class="feature-description">Cada produto é preparado artesanalmente com ingredientes frescos e muito carinho.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Sempre Fresquinho</h3>
+                        <p class="feature-description">Produtos feitos sob encomenda para garantir máxima qualidade e frescor.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Qualidade Garantida</h3>
+                        <p class="feature-description">Ingredientes selecionados e receitas testadas para sua total satisfação.</p>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <!-- Imagem Principal -->
-            <div class="relative">
-              <div class="relative z-10">
-                <img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Deliciosos bolos caseiros" class="rounded-2xl shadow-2xl w-full h-96 object-cover"/>
-              </div>
-              <!-- Elementos decorativos -->
-              <div class="absolute -top-4 -right-4 w-72 h-72 bg-primary-100 rounded-full opacity-20 -z-10"></div>
-              <div class="absolute -bottom-4 -left-4 w-48 h-48 bg-pink-100 rounded-full opacity-30 -z-10"></div>
+        <!-- Products Section -->
+        <section id="products" class="products">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Meus Produtos Deliciosos</h2>
+                    <p class="section-description">
+                        Cada item é feito sob encomenda usando ingredientes premium e técnicas tradicionais. Sinta a diferença do verdadeiro sabor caseiro!
+                    </p>
+                </div>
+
+                <!-- Product Tabs -->
+                <div class="product-tabs">
+                    <div class="tabs-container">
+                        <button class="product-tab active-tab" id="tab-bolos" onclick="showCategory('bolos')">
+                            Bolos
+                        </button>
+                        <button class="product-tab" id="tab-doces" onclick="showCategory('doces')">
+                            Doces & Sobremesas
+                        </button>
+                        <button class="product-tab" id="tab-salgados" onclick="showCategory('salgados')">
+                            Salgados
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Products Container -->
+                <div id="products-container" class="products-container">
+                    <!-- Bolos Category -->
+                    <div id="category-bolos" class="product-category">
+                        <div class="products-grid">
+                            <div class="product-card">
+                                <img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Bolo de Chocolate" class="product-image">
+                                <div class="product-info">
+                                    <h4 class="product-title">Bolo de Chocolate</h4>
+                                    <p class="product-description">Delicioso bolo de chocolate com cobertura cremosa e recheio especial</p>
+                                    <div class="product-price">A partir de R$ 45,00</div>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cheesecake de Baunilha" class="product-image">
+                                <div class="product-info">
+                                    <h4 class="product-title">Cheesecake de Baunilha</h4>
+                                    <p class="product-description">Cremoso cheesecake com essência de baunilha e base crocante</p>
+                                    <div class="product-price">A partir de R$ 55,00</div>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <img src="https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Bolo Red Velvet" class="product-image">
+                                <div class="product-info">
+                                    <h4 class="product-title">Bolo Red Velvet</h4>
+                                    <p class="product-description">Clássico bolo vermelho com cream cheese e sabor único</p>
+                                    <div class="product-price">A partir de R$ 60,00</div>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <img src="https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Bolo de Cenoura" class="product-image">
+                                <div class="product-info">
+                                    <h4 class="product-title">Bolo de Cenoura</h4>
+                                    <p class="product-description">Tradicional bolo de cenoura com cobertura de chocolate cremosa</p>
+                                    <div class="product-price">A partir de R$ 40,00</div>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <img src="https://images.pexels.com/photos/1126728/pexels-photo-1126728.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Bolo de Limão" class="product-image">
+                                <div class="product-info">
+                                    <h4 class="product-title">Bolo de Limão</h4>
+                                    <p class="product-description">Refrescante bolo de limão com cobertura cítrica e toque especial</p>
+                                    <div class="product-price">A partir de R$ 42,00</div>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <img src="https://images.pexels.com/photos/1028714/pexels-photo-1028714.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Bolo de Morango" class="product-image">
+                                <div class="product-info">
+                                    <h4 class="product-title">Bolo de Morango</h4>
+                                    <p class="product-description">Bolo fofinho com morangos frescos e chantilly natural</p>
+                                    <div class="product-price">A partir de R$ 50,00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Doces Category -->
+                    <div id="category-doces" class="product-category hidden">
+                        <div class="products-grid">
+                            <div class="product-card">
+                                <img src="https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cookies Artesanais" class="product-image">
+                                <div class="product-info">
+                                    <h4 class="product-title">Cookies Artesanais</h4>
+                                    <p class="product-description">Cookies crocantes com gotas de chocolate e ingredientes selecionados</p>
+                                    <div class="product-price">A partir de R$ 3,50 cada</div>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <img src="https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Brownies Gourmet" class="product-image">
+                                <div class="product-info">
+                                    <h4 class="product-title">Brownies Gourmet</h4>
+                                    <p class="product-description">Brownies densos e cremosos com chocolate belga premium</p>
+                                    <div class="product-price">A partir de R$ 8,00 cada</div>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <img src="https://images.pexels.com/photos/1028714/pexels-photo-1028714.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Tortinhas de Frutas" class="product-image">
+                                <div class="product-info">
+                                    <h4 class="product-title">Tortinhas de Frutas</h4>
+                                    <p class="product-description">Delicadas tortinhas com frutas frescas da estação</p>
+                                    <div class="product-price">A partir de R$ 12,00 cada</div>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <img src="https://images.pexels.com/photos/1055271/pexels-photo-1055271.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Brigadeiros Gourmet" class="product-image">
+                                <div class="product-info">
+                                    <h4 class="product-title">Brigadeiros Gourmet</h4>
+                                    <p class="product-description">Brigadeiros artesanais com diversos sabores e coberturas especiais</p>
+                                    <div class="product-price">A partir de R$ 4,00 cada</div>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Pudim Caseiro" class="product-image">
+                                <div class="product-info">
+                                    <h4 class="product-title">Pudim Caseiro</h4>
+                                    <p class="product-description">Pudim tradicional com calda de caramelo e textura cremosa</p>
+                                    <div class="product-price">A partir de R$ 25,00</div>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <img src="https://images.pexels.com/photos/1055271/pexels-photo-1055271.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Beijinhos Gourmet" class="product-image">
+                                <div class="product-info">
+                                    <h4 class="product-title">Beijinhos Gourmet</h4>
+                                    <p class="product-description">Beijinhos cremosos com coco fresco e toque especial</p>
+                                    <div class="product-price">A partir de R$ 3,00 cada</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Salgados Category -->
+                    <div id="category-salgados" class="product-category hidden">
+                        <div class="products-grid">
+                            <div class="product-card">
+                                <img src="https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Pão Focaccia" class="product-image">
+                                <div class="product-info">
+                                    <h4 class="product-title">Pão Focaccia</h4>
+                                    <p class="product-description">Focaccia artesanal com ervas frescas e azeite especial</p>
+                                    <div class="product-price">A partir de R$ 18,00</div>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <img src="https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Palitos de Queijo" class="product-image">
+                                <div class="product-info">
+                                    <h4 class="product-title">Palitos de Queijo</h4>
+                                    <p class="product-description">Palitos crocantes com queijo derretido e massa sequinha</p>
+                                    <div class="product-price">A partir de R$ 2,50 cada</div>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <img src="https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Empadas Caseiras" class="product-image">
+                                <div class="product-info">
+                                    <h4 class="product-title">Empadas Caseiras</h4>
+                                    <p class="product-description">Empadas com recheios variados e massa folhada crocante</p>
+                                    <div class="product-price">A partir de R$ 6,00 cada</div>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <img src="https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Coxinhas Gourmet" class="product-image">
+                                <div class="product-info">
+                                    <h4 class="product-title">Coxinhas Gourmet</h4>
+                                    <p class="product-description">Coxinhas especiais com frango desfiado e temperos únicos</p>
+                                    <div class="product-price">A partir de R$ 7,00 cada</div>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <img src="https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Esfirras Abertas" class="product-image">
+                                <div class="product-info">
+                                    <h4 class="product-title">Esfirras Abertas</h4>
+                                    <p class="product-description">Esfirras tradicionais com recheios frescos e massa macia</p>
+                                    <div class="product-price">A partir de R$ 5,50 cada</div>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <img src="https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Quiches Individuais" class="product-image">
+                                <div class="product-info">
+                                    <h4 class="product-title">Quiches Individuais</h4>
+                                    <p class="product-description">Quiches delicados com ingredientes frescos e massa crocante</p>
+                                    <div class="product-price">A partir de R$ 9,00 cada</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <!-- Características -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
-            <div class="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all">
-              <div class="w-12 h-12 gradient-button rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">Feito com Amor</h3>
-              <p class="text-gray-600">Cada produto é preparado artesanalmente com ingredientes frescos e muito carinho.</p>
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <!-- Main Contact Card -->
+                    <div class="contact-card">
+                        <svg class="contact-icon" width="64" height="64" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"/>
+                        </svg>
+                        <h3 class="contact-title">Faça Seu Pedido Agora!</h3>
+                        <p class="contact-description">
+                            Entre em contato pelo WhatsApp e transforme sua ocasião especial em um momento ainda mais doce!
+                        </p>
+                        <button class="btn btn-contact" onclick="openWhatsApp()">
+                            Conversar no WhatsApp
+                        </button>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <div class="contact-info-item">
+                            <svg class="contact-info-icon" width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <h4 class="contact-info-title">Telefone</h4>
+                            <p class="contact-info-text">(11) 99999-9999</p>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <svg class="contact-info-icon" width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <h4 class="contact-info-title">E-mail</h4>
+                            <p class="contact-info-text">maria@delicias.com</p>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <svg class="contact-info-icon" width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <h4 class="contact-info-title">Localização</h4>
+                            <p class="contact-info-text">São Paulo, SP</p>
+                        </div>
+                    </div>
+
+                    <!-- Important Info -->
+                    <div class="important-info">
+                        <h3 class="important-info-title">Informações Importantes</h3>
+                        <div class="important-info-grid">
+                            <ul class="important-info-list">
+                                <li class="important-info-item">
+                                    <svg class="check-icon" width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Pedidos com 48h de antecedência
+                                </li>
+                                <li class="important-info-item">
+                                    <svg class="check-icon" width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Entrega gratuita acima de R$ 100
+                                </li>
+                                <li class="important-info-item">
+                                    <svg class="check-icon" width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Produtos sempre frescos
+                                </li>
+                            </ul>
+                            <ul class="important-info-list">
+                                <li class="important-info-item">
+                                    <svg class="check-icon" width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Pagamento: Dinheiro, PIX, Cartão
+                                </li>
+                                <li class="important-info-item">
+                                    <svg class="check-icon" width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Atendimento personalizado
+                                </li>
+                                <li class="important-info-item">
+                                    <svg class="check-icon" width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Ingredientes selecionados
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all">
-              <div class="w-12 h-12 gradient-button rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">Sempre Fresquinho</h3>
-              <p class="text-gray-600">Produtos feitos sob encomenda para garantir máxima qualidade e frescor.</p>
-            </div>
-
-            <div class="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all">
-              <div class="w-12 h-12 gradient-button rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">Qualidade Garantida</h3>
-              <p class="text-gray-600">Ingredientes selecionados e receitas testadas para sua total satisfação.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Seção de Produtos -->
-      <section id="products" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-          <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Meus Produtos Deliciosos
-            </h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-              Cada item é feito sob encomenda usando ingredientes premium e
-              técnicas tradicionais. Sinta a diferença do verdadeiro sabor
-              caseiro!
-            </p>
-          </div>
-
-          <!-- Abas de Filtro de Produtos -->
-          <div class="flex justify-center mb-12">
-            <div class="bg-gray-100 p-1 rounded-lg inline-flex">
-              <button
-                onclick="showCategory('bolos')"
-                id="tab-bolos"
-                class="product-tab active-tab px-6 py-3 rounded-md font-semibold transition-all"
-              >
-                Bolos
-              </button>
-              <button
-                onclick="showCategory('doces')"
-                id="tab-doces"
-                class="product-tab px-6 py-3 rounded-md font-semibold transition-all"
-              >
-                Doces & Sobremesas
-              </button>
-              <button
-                onclick="showCategory('salgados')"
-                id="tab-salgados"
-                class="product-tab px-6 py-3 rounded-md font-semibold transition-all"
-              >
-                Salgados
-              </button>
-            </div>
-          </div>
-
-          <!-- Container de Produtos -->
-          <div id="products-container">
-            <!-- Categoria: Bolos -->
-            <div id="category-bolos" class="product-category">
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 product-card">
-                  <img
-                    src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Bolo de Chocolate"
-                    class="w-full h-64 object-cover"
-                  />
-                  <div class="p-6">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Bolo de Chocolate</h4>
-                    <p class="text-gray-600">Delicioso bolo de chocolate com cobertura cremosa e recheio especial</p>
-                    <div class="mt-4 text-primary-600 font-semibold">A partir de R$ 45,00</div>
-                  </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 product-card">
-                  <img
-                    src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Cheesecake de Baunilha"
-                    class="w-full h-64 object-cover"
-                  />
-                  <div class="p-6">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Cheesecake de Baunilha</h4>
-                    <p class="text-gray-600">Cremoso cheesecake com essência de baunilha e base crocante</p>
-                    <div class="mt-4 text-primary-600 font-semibold">A partir de R$ 55,00</div>
-                  </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 product-card">
-                  <img
-                    src="https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Bolo Red Velvet"
-                    class="w-full h-64 object-cover"
-                  />
-                  <div class="p-6">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Bolo Red Velvet</h4>
-                    <p class="text-gray-600">Clássico bolo vermelho com cream cheese e sabor único</p>
-                    <div class="mt-4 text-primary-600 font-semibold">A partir de R$ 60,00</div>
-                  </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 product-card">
-                  <img
-                    src="https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Bolo de Cenoura"
-                    class="w-full h-64 object-cover"
-                  />
-                  <div class="p-6">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Bolo de Cenoura</h4>
-                    <p class="text-gray-600">Tradicional bolo de cenoura com cobertura de chocolate cremosa</p>
-                    <div class="mt-4 text-primary-600 font-semibold">A partir de R$ 40,00</div>
-                  </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 product-card">
-                  <img
-                    src="https://images.pexels.com/photos/1126728/pexels-photo-1126728.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Bolo de Limão"
-                    class="w-full h-64 object-cover"
-                  />
-                  <div class="p-6">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Bolo de Limão</h4>
-                    <p class="text-gray-600">Refrescante bolo de limão com cobertura cítrica e toque especial</p>
-                    <div class="mt-4 text-primary-600 font-semibold">A partir de R$ 42,00</div>
-                  </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 product-card">
-                  <img
-                    src="https://images.pexels.com/photos/1028714/pexels-photo-1028714.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Bolo de Morango"
-                    class="w-full h-64 object-cover"
-                  />
-                  <div class="p-6">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Bolo de Morango</h4>
-                    <p class="text-gray-600">Bolo fofinho com morangos frescos e chantilly natural</p>
-                    <div class="mt-4 text-primary-600 font-semibold">A partir de R$ 50,00</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Categoria: Doces -->
-            <div id="category-doces" class="product-category hidden">
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 product-card">
-                  <img
-                    src="https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Cookies Artesanais"
-                    class="w-full h-64 object-cover"
-                  />
-                  <div class="p-6">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Cookies Artesanais</h4>
-                    <p class="text-gray-600">Cookies crocantes com gotas de chocolate e ingredientes selecionados</p>
-                    <div class="mt-4 text-primary-600 font-semibold">A partir de R$ 3,50 cada</div>
-                  </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 product-card">
-                  <img
-                    src="https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Brownies Gourmet"
-                    class="w-full h-64 object-cover"
-                  />
-                  <div class="p-6">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Brownies Gourmet</h4>
-                    <p class="text-gray-600">Brownies densos e cremosos com chocolate belga premium</p>
-                    <div class="mt-4 text-primary-600 font-semibold">A partir de R$ 8,00 cada</div>
-                  </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 product-card">
-                  <img
-                    src="https://images.pexels.com/photos/1028714/pexels-photo-1028714.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Tortinhas de Frutas"
-                    class="w-full h-64 object-cover"
-                  />
-                  <div class="p-6">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Tortinhas de Frutas</h4>
-                    <p class="text-gray-600">Delicadas tortinhas com frutas frescas da estação</p>
-                    <div class="mt-4 text-primary-600 font-semibold">A partir de R$ 12,00 cada</div>
-                  </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 product-card">
-                  <img
-                    src="https://images.pexels.com/photos/1055271/pexels-photo-1055271.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Brigadeiros Gourmet"
-                    class="w-full h-64 object-cover"
-                  />
-                  <div class="p-6">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Brigadeiros Gourmet</h4>
-                    <p class="text-gray-600">Brigadeiros artesanais com diversos sabores e coberturas especiais</p>
-                    <div class="mt-4 text-primary-600 font-semibold">A partir de R$ 4,00 cada</div>
-                  </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 product-card">
-                  <img
-                    src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Pudim Caseiro"
-                    class="w-full h-64 object-cover"
-                  />
-                  <div class="p-6">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Pudim Caseiro</h4>
-                    <p class="text-gray-600">Pudim tradicional com calda de caramelo e textura cremosa</p>
-                    <div class="mt-4 text-primary-600 font-semibold">A partir de R$ 25,00</div>
-                  </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 product-card">
-                  <img
-                    src="https://images.pexels.com/photos/1055271/pexels-photo-1055271.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Beijinhos Gourmet"
-                    class="w-full h-64 object-cover"
-                  />
-                  <div class="p-6">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Beijinhos Gourmet</h4>
-                    <p class="text-gray-600">Beijinhos cremosos com coco fresco e toque especial</p>
-                    <div class="mt-4 text-primary-600 font-semibold">A partir de R$ 3,00 cada</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Categoria: Salgados -->
-            <div id="category-salgados" class="product-category hidden">
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 product-card">
-                  <img
-                    src="https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Pão Focaccia"
-                    class="w-full h-64 object-cover"
-                  />
-                  <div class="p-6">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Pão Focaccia</h4>
-                    <p class="text-gray-600">Focaccia artesanal com ervas frescas e azeite especial</p>
-                    <div class="mt-4 text-primary-600 font-semibold">A partir de R$ 18,00</div>
-                  </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 product-card">
-                  <img
-                    src="https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Palitos de Queijo"
-                    class="w-full h-64 object-cover"
-                  />
-                  <div class="p-6">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Palitos de Queijo</h4>
-                    <p class="text-gray-600">Palitos crocantes com queijo derretido e massa sequinha</p>
-                    <div class="mt-4 text-primary-600 font-semibold">A partir de R$ 2,50 cada</div>
-                  </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 product-card">
-                  <img
-                    src="https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Empadas Caseiras"
-                    class="w-full h-64 object-cover"
-                  />
-                  <div class="p-6">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Empadas Caseiras</h4>
-                    <p class="text-gray-600">Empadas com recheios variados e massa folhada crocante</p>
-                    <div class="mt-4 text-primary-600 font-semibold">A partir de R$ 6,00 cada</div>
-                  </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 product-card">
-                  <img
-                    src="https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Coxinhas Gourmet"
-                    class="w-full h-64 object-cover"
-                  />
-                  <div class="p-6">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Coxinhas Gourmet</h4>
-                    <p class="text-gray-600">Coxinhas especiais com frango desfiado e temperos únicos</p>
-                    <div class="mt-4 text-primary-600 font-semibold">A partir de R$ 7,00 cada</div>
-                  </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 product-card">
-                  <img
-                    src="https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Esfirras Abertas"
-                    class="w-full h-64 object-cover"
-                  />
-                  <div class="p-6">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Esfirras Abertas</h4>
-                    <p class="text-gray-600">Esfirras tradicionais com recheios frescos e massa macia</p>
-                    <div class="mt-4 text-primary-600 font-semibold">A partir de R$ 5,50 cada</div>
-                  </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 product-card">
-                  <img
-                    src="https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Quiches Individuais"
-                    class="w-full h-64 object-cover"
-                  />
-                  <div class="p-6">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Quiches Individuais</h4>
-                    <p class="text-gray-600">Quiches delicados com ingredientes frescos e massa crocante</p>
-                    <div class="mt-4 text-primary-600 font-semibold">A partir de R$ 9,00 cada</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-                    <p class="font-semibold text-gray-900">Mariana Costa</p>
-          <div class="max-w-4xl mx-auto">
-            <!-- Card Principal de Contato -->
-            <div class="bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-2xl shadow-2xl p-12 text-center">
-              <svg
-                class="w-16 h-16 mx-auto mb-6"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"
-                />
-              </svg>
-              <h3 class="text-3xl font-bold mb-4">Faça Seu Pedido Agora!</h3>
-              <p class="text-xl mb-8 opacity-90">
-                Entre em contato pelo WhatsApp e transforme sua ocasião especial em um momento ainda mais doce!
-              </p>
-              <button
-                onclick="openWhatsApp()"
-                class="bg-white text-orange-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
-              >
-                Conversar no WhatsApp
-              </button>
-            </div>
-
-            <!-- Informações de Contato -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-              <div class="text-center p-6 bg-gray-50 rounded-lg">
-                <svg class="w-8 h-8 text-orange-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                </svg>
-                <h4 class="font-semibold text-gray-900 mb-2">Telefone</h4>
-                <p class="text-gray-600">(11) 99999-9999</p>
-              </div>
-
-              <div class="text-center p-6 bg-gray-50 rounded-lg">
-                <svg class="w-8 h-8 text-orange-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                </svg>
-                <h4 class="font-semibold text-gray-900 mb-2">E-mail</h4>
-                <p class="text-gray-600">maria@delicias.com</p>
-              </div>
-
-              <div class="text-center p-6 bg-gray-50 rounded-lg">
-                <svg class="w-8 h-8 text-orange-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                </svg>
-                <h4 class="font-semibold text-gray-900 mb-2">Localização</h4>
-                <p class="text-gray-600">São Paulo, SP</p>
-              </div>
-            </div>
-
-            <!-- Informações Importantes -->
-            <div class="bg-white rounded-lg shadow-lg p-8 mt-12">
-              <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center">
-                Informações Importantes
-              </h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <ul class="space-y-3 text-gray-600">
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    Pedidos com 48h de antecedência
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    Entrega gratuita acima de R$ 100
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    Produtos sempre frescos
-                  </li>
-                </ul>
-                <ul class="space-y-3 text-gray-600">
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    Pagamento: Dinheiro, PIX, Cartão
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    Atendimento personalizado
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    Ingredientes selecionados
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
     </main>
 
-    <!-- Rodapé -->
-    <footer class="bg-gray-50 py-12 border-t border-gray-200">
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          <!-- Logo e Descrição -->
-          <div>
-            <div class="flex items-center space-x-3 mb-4">
-              <div class="w-8 h-8 gradient-button rounded-full flex items-center justify-center">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zM3 9a2 2 0 012-2h14a2 2 0 012 2v1H3V9z"/>
-                </svg>
-              </div>
-              <span class="text-xl font-bold gradient-text">Delícias da Maria</span>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo and Description -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zM3 9a2 2 0 012-2h14a2 2 0 012 2v1H3V9z"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Delícias da Maria</span>
+                    </div>
+                    <p class="footer-description">
+                        Produtos caseiros feitos com amor e ingredientes selecionados.
+                    </p>
+                    <button class="btn btn-primary" onclick="openWhatsApp()">WhatsApp</button>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4 class="footer-title">Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#hero" class="footer-link">Início</a></li>
+                        <li><a href="#products" class="footer-link">Produtos</a></li>
+                        <li><a href="#contact" class="footer-link">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h4 class="footer-title">Contato</h4>
+                    <ul class="footer-contact">
+                        <li class="footer-contact-item">
+                            <svg class="footer-contact-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <span>(11) 99999-9999</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <svg class="footer-contact-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <span>maria@delicias.com</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <svg class="footer-contact-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <span>São Paulo, SP</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <p class="text-gray-600 mb-4">
-              Produtos caseiros feitos com amor e ingredientes selecionados.
-            </p>
-            <button onclick="openWhatsApp()" class="gradient-button text-white px-6 py-2 rounded-lg hover:shadow-lg transition-all">
-              WhatsApp
-            </button>
-          </div>
 
-          <!-- Links Rápidos -->
-          <div>
-            <h4 class="text-lg font-semibold mb-4 text-gray-900">Links Rápidos</h4>
-            <ul class="space-y-2">
-              <li><a href="#hero" class="text-gray-600 hover:text-primary-600 transition-colors">Início</a></li>
-              <li><a href="#products" class="text-gray-600 hover:text-primary-600 transition-colors">Produtos</a></li>
-              <li><a href="#contact" class="text-gray-600 hover:text-primary-600 transition-colors">Contato</a></li>
-            </ul>
-          </div>
-
-          <!-- Informações de Contato -->
-          <div>
-            <h4 class="text-lg font-semibold mb-4 text-gray-900">Contato</h4>
-            <ul class="space-y-3">
-              <li class="flex items-center space-x-3 text-gray-600">
-                <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                </svg>
-                <span>(11) 99999-9999</span>
-              </li>
-              <li class="flex items-center space-x-3 text-gray-600">
-                <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                </svg>
-                <span>maria@delicias.com</span>
-              </li>
-              <li class="flex items-center space-x-3 text-gray-600">
-                <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                </svg>
-                <span>São Paulo, SP</span>
-              </li>
-            </ul>
-          </div>
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 Delícias da Maria. Todos os direitos reservados.
+                </p>
+            </div>
         </div>
-
-        <!-- Copyright -->
-        <div class="border-t border-gray-200 pt-6 text-center">
-          <p class="text-gray-500">
-            © 2024 Delícias da Maria. Todos os direitos reservados.
-          </p>
-        </div>
-      </div>
     </footer>
 
     <!-- Scripts -->
-    <script type="module" src="src/js/main.js"></script>
-  </body>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/products.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
 </html>

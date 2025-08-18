@@ -1,16 +1,39 @@
 {
-  "name": "delicia-cazeiras",
-  "version": "1.0.0",
-  "description": "Delícia Caseiras é um site profissional de produtos caseiros, criado para apresentar e vender bolos, doces e salgados artesanais.",
+  "name": "delicias-caseiras",
+  "version": "2.0.0",
+  "description": "Site profissional para produtos caseiros - Delícias da Maria. Desenvolvido com HTML, CSS e JavaScript puros.",
   "main": "index.html",
   "scripts": {
     "dev": "live-server --port=3000 --open=/",
-    "start": "live-server --port=3000 --open=/"
+    "start": "live-server --port=3000 --open=/",
+    "build": "echo 'Projeto não requer build - arquivos estáticos prontos para produção'",
+    "preview": "live-server --port=8080 --open=/"
   },
-  "keywords": ["website", "produtos-caseiros", "bolos", "doces", "salgados", "artesanal", "caseiro"],
-  "author": "",
+  "keywords": [
+    "website",
+    "produtos-caseiros", 
+    "bolos",
+    "doces",
+    "salgados",
+    "artesanal",
+    "caseiro",
+    "html",
+    "css",
+    "javascript",
+    "responsive",
+    "mobile-first"
+  ],
+  "author": "Delícias da Maria",
   "license": "ISC",
   "devDependencies": {
     "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "homepage": ".",
+  "engines": {
+    "node": ">=14.0.0"
   }
 }

@@ -25,7 +25,7 @@
     /* Hero */
     .hero-content {
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-6xl);
+        gap: var(--spacing-5xl);
     }
 
     .hero-text {
@@ -43,25 +43,11 @@
     }
 
     .hero-buttons {
-        flex-direction: row;
         justify-content: flex-start;
-        gap: var(--spacing-2xl);
     }
 
     .container {
         padding: 0 var(--spacing-2xl);
-    }
-
-    /* Features better spacing */
-    .features {
-        gap: var(--spacing-5xl);
-        padding: 0 var(--spacing-3xl);
-    }
-
-    /* Products better spacing */
-    .products-grid {
-        gap: var(--spacing-5xl);
-        padding: 0 var(--spacing-3xl);
     }
 }
 
@@ -74,19 +60,6 @@
 
     .container {
         padding: 0 var(--spacing-3xl);
-    }
-
-    /* Better spacing for large screens */
-    .features {
-        padding: 0 var(--spacing-4xl);
-    }
-
-    .products-grid {
-        padding: 0 var(--spacing-4xl);
-    }
-
-    .contact-info {
-        padding: 0 var(--spacing-4xl);
     }
 }
 
@@ -109,26 +82,19 @@
 @media (max-width: 767px) {
     .hero-buttons {
         flex-direction: column;
-        gap: var(--spacing-xl);
-        width: 100%;
-    }
-
-    .hero-buttons .btn {
-        width: 100%;
-        max-width: 280px;
+        gap: var(--spacing-lg);
     }
 
     .product-tabs .tabs-container {
         flex-direction: column;
         width: 100%;
-        max-width: 320px;
+        max-width: 300px;
         margin: 0 auto;
     }
 
     .product-tab {
         text-align: center;
-        padding: var(--spacing-lg) var(--spacing-xl);
-        min-width: auto;
+        padding: var(--spacing-md) var(--spacing-lg);
     }
 
     .mobile-menu {
@@ -185,23 +151,7 @@
     }
 
     .container {
-        padding: 0 var(--spacing-xl);
-    }
-
-    /* Mobile spacing adjustments */
-    .features {
-        gap: var(--spacing-3xl);
-        padding: 0 var(--spacing-xl);
-    }
-
-    .products-grid {
-        gap: var(--spacing-3xl);
-        padding: 0 var(--spacing-xl);
-    }
-
-    .contact-info {
-        gap: var(--spacing-3xl);
-        padding: 0 var(--spacing-xl);
+        padding: 0 var(--spacing-lg);
     }
 }
 

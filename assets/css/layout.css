@@ -20,7 +20,7 @@
     width: 100%;
     max-width: var(--container-max);
     margin: 0 auto;
-    padding: 0 var(--spacing-2xl);
+    padding: 0 var(--spacing-xl);
 }
 
 /* Desktop Navigation */
@@ -84,7 +84,7 @@
 /* Hero Section */
 .hero {
     padding-top: 80px;
-    padding-bottom: var(--spacing-6xl);
+    padding-bottom: var(--spacing-8xl);
     background: var(--gradient-bg);
     min-height: 100vh;
     display: flex;
@@ -110,7 +110,7 @@
     grid-template-columns: 1fr;
     gap: var(--spacing-6xl);
     align-items: center;
-    margin-bottom: var(--spacing-4xl);
+    margin-bottom: var(--spacing-8xl);
     position: relative;
     z-index: 1;
 }
@@ -123,9 +123,9 @@
     font-size: var(--font-size-5xl);
     font-weight: var(--font-weight-bold);
     color: var(--text-primary);
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-3xl);
     line-height: var(--line-height-tight);
-    max-width: 48rem;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -133,8 +133,8 @@
 .hero-description {
     font-size: var(--font-size-xl);
     color: var(--text-secondary);
-    margin-bottom: var(--spacing-3xl);
-    max-width: 42rem;
+    margin-bottom: var(--spacing-4xl);
+    max-width: 560px;
     margin-left: auto;
     margin-right: auto;
     line-height: var(--line-height-relaxed);
@@ -142,10 +142,11 @@
 
 .hero-buttons {
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-2xl);
+    flex-direction: row;
+    gap: var(--spacing-xl);
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .hero-image {
@@ -201,13 +202,12 @@
 /* Features */
 .features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--spacing-4xl);
-    margin-top: var(--spacing-6xl);
-    max-width: var(--container-max);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-2xl);
+    margin-top: var(--spacing-8xl);
+    max-width: var(--container-lg);
     margin-left: auto;
     margin-right: auto;
-    padding: 0 var(--spacing-2xl);
 }
 
 /* Products Section */
@@ -244,10 +244,9 @@
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--spacing-4xl);
-    max-width: var(--container-max);
+    gap: var(--spacing-3xl);
+    max-width: var(--container-xl);
     margin: 0 auto;
-    padding: 0 var(--spacing-2xl);
 }
 
 /* Contact Section */
@@ -270,7 +269,7 @@
 }
 
 .contact-content {
-    max-width: var(--container-max);
+    max-width: var(--container-xl);
     margin: 0 auto;
     position: relative;
     z-index: 1;
@@ -279,15 +278,14 @@
 .contact-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-4xl);
+    gap: var(--spacing-3xl);
     margin-bottom: var(--spacing-6xl);
-    padding: 0 var(--spacing-2xl);
 }
 
 .important-info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-4xl);
+    gap: var(--spacing-3xl);
 }
 
 .important-info-list {
@@ -305,10 +303,9 @@
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-5xl);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-4xl);
     margin-bottom: var(--spacing-4xl);
-    padding: 0 var(--spacing-2xl);
 }
 
 .footer-section {

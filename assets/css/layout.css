@@ -83,7 +83,7 @@
 
 /* Hero Section */
 .hero {
-    padding-top: 80px;
+    padding-top: 120px;
     padding-bottom: var(--spacing-8xl);
     background: var(--gradient-bg);
     min-height: 100vh;

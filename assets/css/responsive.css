@@ -80,6 +80,11 @@
 
 /* Mobile-specific adjustments */
 @media (max-width: 767px) {
+    .hero {
+        padding-top: 100px;
+        padding-bottom: var(--spacing-6xl);
+    }
+
     .hero-buttons {
         flex-direction: column;
         gap: var(--spacing-lg);

@@ -359,21 +359,16 @@ Este projeto está licenciado sob a **Licença ISC** - veja o arquivo [LICENSE](
 
 ## 👨‍💻 Autor
 
-**Desenvolvido com ❤️ por [Seu Nome]**
+**Desenvolvido por [Vinicius Arruda]**
 
-- 🌐 Website: [seu-website.com](https://seu-website.com)
-- 📧 Email: [seu-email@exemplo.com](mailto:seu-email@exemplo.com)
-- 💼 LinkedIn: [Seu LinkedIn](https://linkedin.com/in/seu-perfil)
-- 🐙 GitHub: [Seu GitHub](https://github.com/seu-usuario)
+- 🌐 Website: []()
+- 📧 Email: []()
+- 💼 LinkedIn: []()
+- 🐙 GitHub: []()
 
 ---
 
 ## 🙏 Agradecimentos
-
-- **Pexels** - Pelas imagens de alta qualidade
-- **Heroicons** - Pelos ícones SVG elegantes
-- **MDN Web Docs** - Pela documentação excepcional
-- **Web.dev** - Pelas práticas de performance e acessibilidade
 
 ---
 

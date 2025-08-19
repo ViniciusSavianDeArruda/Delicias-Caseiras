@@ -62,6 +62,22 @@
     width: 100%;
 }
 
+/* Hero Buttons */
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: center;
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .hero-buttons {
+        flex-direction: row;
+        gap: var(--spacing-lg);
+    }
+}
+
 /* Cards */
 .card {
     background: var(--bg-primary);

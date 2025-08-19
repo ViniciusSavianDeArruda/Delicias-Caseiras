@@ -142,15 +142,28 @@
 
     /* Adjust hero for mobile */
     .hero {
-        padding-bottom: var(--spacing-4xl);
+        padding-top: 80px;
+        padding-bottom: var(--spacing-2xl);
+        min-height: 85vh;
+    }
+
+    .hero-content {
+        gap: var(--spacing-xl);
+        margin-bottom: var(--spacing-xl);
     }
 
     .hero-title {
         font-size: var(--font-size-3xl);
+        margin-bottom: var(--spacing-md);
     }
 
     .hero-description {
         font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .hero-buttons {
+        gap: var(--spacing-xs);
     }
 
     /* Adjust sections for mobile */

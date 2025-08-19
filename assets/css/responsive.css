@@ -81,7 +81,7 @@
 /* Mobile-specific adjustments */
 @media (max-width: 767px) {
     .hero-buttons {
-        flex-direction: column;
+        flex-direction: row;
         gap: var(--spacing-lg);
     }
 
@@ -151,7 +151,7 @@
     }
 
     .container {
-        padding: 0 var(--spacing-lg);
+        padding: 0 var(--spacing-xl);
     }
 }
 

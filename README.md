@@ -10,6 +10,26 @@
 
 ---
 
+## 📸 Screenshots
+
+### 🏠 **Página Inicial - Hero Section**
+![Hero Section](https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=1200)
+*Interface principal com call-to-actions e apresentação da marca*
+
+### 🛍️ **Catálogo de Produtos**
+![Catálogo de Produtos](https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1200)
+*Sistema de abas com categorias: Bolos, Doces & Sobremesas, Salgados*
+
+### 📱 **Versão Mobile**
+![Versão Mobile](https://images.pexels.com/photos/1028714/pexels-photo-1028714.jpeg?auto=compress&cs=tinysrgb&w=600)
+*Design responsivo otimizado para dispositivos móveis*
+
+### 💬 **Seção de Contato**
+![Seção de Contato](https://images.pexels.com/photos/1055271/pexels-photo-1055271.jpeg?auto=compress&cs=tinysrgb&w=1200)
+*Integração WhatsApp e informações de contato completas*
+
+---
+
 ## 📋 Índice
 
 - [Visão Geral](#-visão-geral)

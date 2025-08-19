@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "live-server --port=3000 --open=/",
     "start": "live-server --port=3000 --open=/",
-    "build": "echo 'Projeto não requer build - arquivos estáticos prontos para produção'",
+    "build": "mkdir -p dist && cp -r * dist/ 2>/dev/null || true && rm -rf dist/dist dist/node_modules 2>/dev/null || true",
     "preview": "live-server --port=8080 --open=/"
   },
   "keywords": [

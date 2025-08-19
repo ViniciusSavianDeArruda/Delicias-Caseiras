@@ -81,7 +81,7 @@
     padding-top: 64px;
     padding-bottom: var(--spacing-3xl);
     background: var(--gradient-bg);
-    min-height: 90vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
 }
@@ -89,13 +89,14 @@
 .hero-content {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-3xl);
     align-items: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-2xl);
 }
 
 .hero-text {
     text-align: center;
+    max-width: 100%;
 }
 
 .hero-title {
@@ -109,7 +110,7 @@
 .hero-description {
     font-size: var(--font-size-lg);
     color: var(--text-secondary);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
     max-width: 48rem;
     margin-left: auto;
     margin-right: auto;
@@ -119,24 +120,30 @@
 .hero-buttons {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-md);
     align-items: center;
+    justify-content: center;
 }
 
 .hero-image {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-image-container {
     position: relative;
     z-index: 10;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .hero-img {
     border-radius: var(--radius-2xl);
     box-shadow: var(--shadow-2xl);
     width: 100%;
-    height: 384px;
+    height: 350px;
     object-fit: cover;
 }
 
@@ -150,16 +157,16 @@
 .hero-decoration-1 {
     top: -1rem;
     right: -1rem;
-    width: 288px;
-    height: 288px;
+    width: 200px;
+    height: 200px;
     background: var(--primary-100);
 }
 
 .hero-decoration-2 {
     bottom: -1rem;
     left: -1rem;
-    width: 192px;
-    height: 192px;
+    width: 150px;
+    height: 150px;
     background: var(--pink-100);
     opacity: 0.3;
 }
@@ -168,7 +175,8 @@
 .features {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
 }
 
 /* Products Section */

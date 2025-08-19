@@ -2,27 +2,6 @@
 
 /* Small screens (sm) - 640px and up */
 @media (min-width: 640px) {
-    .hero-buttons {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .features {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .contact-info {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .footer-section {
         text-align: left;
     }
@@ -46,48 +25,29 @@
     /* Hero */
     .hero-content {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-5xl);
     }
 
     .hero-text {
         text-align: left;
     }
 
-    .hero-buttons {
-        justify-content: flex-start;
-    }
-
     .hero-title {
-        font-size: var(--font-size-5xl);
-    }
-
-    .hero-description {
-        font-size: var(--font-size-xl);
         margin-left: 0;
         margin-right: 0;
     }
 
-    /* Features */
-    .features {
-        grid-template-columns: repeat(3, 1fr);
+    .hero-description {
+        margin-left: 0;
+        margin-right: 0;
     }
 
-    /* Products */
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .hero-buttons {
+        justify-content: flex-start;
     }
 
-    /* Contact */
-    .contact-info {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .important-info-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Footer */
-    .footer-content {
-        grid-template-columns: repeat(3, 1fr);
+    .container {
+        padding: 0 var(--spacing-2xl);
     }
 }
 
@@ -98,33 +58,52 @@
         font-size: var(--font-size-6xl);
     }
 
-    /* Products */
-    .products-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    /* Section spacing */
-    .section-title {
-        font-size: var(--font-size-4xl);
+    .container {
+        padding: 0 var(--spacing-3xl);
     }
 }
 
 /* Extra large screens (xl) - 1280px and up */
 @media (min-width: 1280px) {
+    .hero-title {
+        font-size: var(--font-size-6xl);
+    }
+
+    .section-title {
+        font-size: var(--font-size-6xl);
+    }
+    
     .container {
-        padding: 0 2rem;
+        padding: 0 var(--spacing-4xl);
     }
 }
 
 /* Mobile-specific adjustments */
 @media (max-width: 767px) {
+    .hero-buttons {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+
+    .product-tabs .tabs-container {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .product-tab {
+        text-align: center;
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+
     .mobile-menu {
         position: fixed;
-        top: 4rem;
-        left: 1rem;
-        right: 1rem;
+        top: 5rem;
+        left: var(--spacing-lg);
+        right: var(--spacing-lg);
         width: auto;
-        max-width: calc(100% - 2rem);
+        max-width: calc(100% - 3rem);
         border-radius: var(--radius-xl);
         margin: 0;
         box-shadow: var(--shadow-xl);
@@ -142,33 +121,37 @@
 
     /* Adjust hero for mobile */
     .hero {
-        padding-bottom: var(--spacing-4xl);
+        padding-bottom: var(--spacing-6xl);
     }
 
     .hero-title {
-        font-size: var(--font-size-3xl);
+        font-size: var(--font-size-4xl);
     }
 
     .hero-description {
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-lg);
     }
 
     /* Adjust sections for mobile */
     .section-title {
-        font-size: var(--font-size-3xl);
+        font-size: var(--font-size-4xl);
     }
 
     .section-description {
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-lg);
     }
 
     /* Contact adjustments */
     .contact-title {
-        font-size: var(--font-size-2xl);
+        font-size: var(--font-size-3xl);
     }
 
     .contact-description {
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-xl);
+    }
+
+    .container {
+        padding: 0 var(--spacing-lg);
     }
 }
 

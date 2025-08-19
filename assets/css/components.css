@@ -62,22 +62,6 @@
     width: 100%;
 }
 
-/* Hero Buttons */
-.hero-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    align-items: center;
-    width: 100%;
-}
-
-@media (min-width: 640px) {
-    .hero-buttons {
-        flex-direction: row;
-        gap: var(--spacing-lg);
-    }
-}
-
 /* Cards */
 .card {
     background: var(--bg-primary);
@@ -258,14 +242,14 @@
 /* Section Headers */
 .section-header {
     text-align: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-4xl);
 }
 
 .section-title {
     font-size: var(--font-size-4xl);
     font-weight: var(--font-weight-bold);
     color: var(--text-primary);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
     line-height: var(--line-height-tight);
 }
 
